@@ -9,6 +9,9 @@ public class MenuManager : MonoBehaviour
     public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel;
     public GameObject player, spawnPos, CameraMain;
     public Crouch PlayerCam;
+    [SerializeField]
+    public Animation Chest1, Chest2, Chest3;
+    public GameObject particle1, particle2;
     // Start is called before the first frame update
     void Start()
     {

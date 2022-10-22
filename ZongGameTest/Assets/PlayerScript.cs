@@ -32,23 +32,27 @@ public class PlayerScript : MonoBehaviour
             MM.CameraMain.SetActive(true);
             MM.menuPanel.SetActive(true);
             MM.Alert.Play();
+            MM.objCollider.SetActive(false);
         }
         if(other.gameObject.tag == "Box1")
         {
             MM.treasuremusic.Play();
             MM.Chest1.enabled = true;
             MM.particle1.SetActive(true);
+            MM.Chest1collider.SetActive(false);
         }
         if (other.gameObject.tag == "Box2")
         {
             MM.treasuremusic.Play();
             MM.Chest2.enabled = true;
             MM.particle2.SetActive(false);
+            MM.Chest2collider.SetActive(false);
         }
         if (other.gameObject.tag == "Box3")
         {
             MM.treasuremusic.Play();
             MM.Chest3.enabled = true;
+            MM.chest3collider.SetActive(false);
             Invoke("spawn", 2f);
         }
     }

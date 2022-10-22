@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
     public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel;
     public GameObject player, spawnPos, CameraMain;
     private Crouch PlayerCam;
-    
+    public GameObject objCollider, Chest1collider, Chest2collider, chest3collider;
     public Animator Chest1, Chest2, Chest3;
     public GameObject particle1, particle2, Diamondimg;
     // Start is called before the first frame update
@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
             Diamondimg.SetActive(true);
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "pickobject")
@@ -43,12 +44,12 @@ public class MenuManager : MonoBehaviour
             PlayerPrefs.SetInt("Diamond", 1);
             PlayerCam.Cam.SetActive(false);
             CameraMain.SetActive(true);
-        }
-       
+        }     
     }
 
     public void Exit()
     {
+        PlayerCam.Cam.SetActive(true);
         CameraMain.SetActive(false);
         player.SetActive(true);
         menuPanel.SetActive(false);

@@ -37,11 +37,13 @@ public class PlayerScript : MonoBehaviour
         {
             MM.treasuremusic.Play();
             MM.Chest1.enabled = true;
+            MM.particle1.SetActive(true);
         }
         if (other.gameObject.tag == "Box2")
         {
             MM.treasuremusic.Play();
             MM.Chest2.enabled = true;
+            MM.particle2.SetActive(false);
         }
         if (other.gameObject.tag == "Box3")
         {

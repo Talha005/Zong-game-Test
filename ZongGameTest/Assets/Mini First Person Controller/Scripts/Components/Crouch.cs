@@ -24,7 +24,7 @@ public class Crouch : MonoBehaviour
 
     public bool IsCrouched { get; private set; }
     public event System.Action CrouchStart, CrouchEnd;
-
+    public GameObject Cam;
 
     void Reset()
     {

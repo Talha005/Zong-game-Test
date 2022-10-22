@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    
-    public AudioSource BGmusic, iconmusic, selectmusic, treasuremusic;
+
+    public AudioSource BGmusic, iconmusic, selectmusic, treasuremusic, Alert;
     public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel;
     public GameObject player, spawnPos, CameraMain;
-    public Crouch PlayerCam;
-    [SerializeField]
-    public Animation Chest1, Chest2, Chest3;
-    public GameObject particle1, particle2;
+    private Crouch PlayerCam;
+    
+    public Animator Chest1, Chest2, Chest3;
+    public GameObject particle1, particle2, Diamondimg;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +29,13 @@ public class MenuManager : MonoBehaviour
     {
         iconmusic.Play();
     }
-
+     public void instrumentAdd()
+    {
+        if(PlayerPrefs.GetInt("Diamond") == 1)
+        {
+            Diamondimg.SetActive(true);
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "pickobject")
@@ -38,9 +44,13 @@ public class MenuManager : MonoBehaviour
             PlayerCam.Cam.SetActive(false);
             CameraMain.SetActive(true);
         }
-        if (other.gameObject.tag == "Box3")
-        {
-            Instantiate(player, spawnPos.transform.position,spawnPos.transform.rotation);
-        }
+       
+    }
+
+    public void Exit()
+    {
+        CameraMain.SetActive(false);
+        player.SetActive(true);
+        menuPanel.SetActive(false);
     }
 }

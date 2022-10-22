@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 114963311885979670}
   - component: {fileID: 114497868231759342}
   - component: {fileID: 114762042097486276}
+  - component: {fileID: 7388021113985155002}
   m_Layer: 0
   m_Name: First Person Controller
   m_TagString: Untagged
@@ -572,6 +573,19 @@ MonoBehaviour:
   headToLower: {fileID: 4490257326247362}
   crouchYHeadPosition: 1
   colliderToLower: {fileID: 136877096903737240}
+  Cam: {fileID: 1593727746557118}
+--- !u!114 &7388021113985155002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773623360729482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88330fcc9ebf76e4790b6923ff508095, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1963958859065967600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1451,9 +1465,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f9b1f3136a723341984cc95d5044b59, type: 3}
+--- !u!1 &7629542413405972505 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f9b1f3136a723341984cc95d5044b59,
+    type: 3}
+  m_PrefabInstance: {fileID: 7287103159537489224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7109570598269268643 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f9b1f3136a723341984cc95d5044b59,
     type: 3}
   m_PrefabInstance: {fileID: 7287103159537489224}
   m_PrefabAsset: {fileID: 0}
+--- !u!111 &1757891567
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629542413405972505}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Animation: {fileID: -203655887218126122, guid: 1f9b1f3136a723341984cc95d5044b59,
+    type: 3}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

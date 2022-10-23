@@ -21,6 +21,13 @@ public class PlayerScript : MonoBehaviour
      void spawn()
     {
         Instantiate(MM.player, MM.spawnPos.transform.position, MM.spawnPos.transform.rotation);
+        MM.player.SetActive(false);
+        PlayerPrefs.SetInt("Diamond", 0);
+        PlayerCam.Cam.SetActive(false);
+        MM.CameraMain.SetActive(true);
+        MM.menuPanel.SetActive(true);
+        MM.Alert.Play();
+        MM.objCollider.SetActive(true);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -31,8 +38,7 @@ public class PlayerScript : MonoBehaviour
             PlayerCam.Cam.SetActive(false);
             MM.CameraMain.SetActive(true);
             MM.menuPanel.SetActive(true);
-            MM.Alert.Play();
-            MM.objCollider.SetActive(false);
+            MM.Alert.Play();            
         }
         if(other.gameObject.tag == "Box1")
         {
@@ -40,21 +46,36 @@ public class PlayerScript : MonoBehaviour
             MM.Chest1.enabled = true;
             MM.particle1.SetActive(true);
             MM.Chest1collider.SetActive(false);
+            MM.Chest1text.SetActive(true);
+            MM.diamond1.enabled = true;
+            Invoke("TextBox", 2f);
         }
         if (other.gameObject.tag == "Box2")
         {
             MM.treasuremusic.Play();
             MM.Chest2.enabled = true;
-            MM.particle2.SetActive(false);
+            MM.particle2.SetActive(true);
             MM.Chest2collider.SetActive(false);
+            MM.Chest2Text.SetActive(true);
+            MM.diamond2.enabled = true;
+            Invoke("TextBox", 2f);
         }
         if (other.gameObject.tag == "Box3")
         {
             MM.treasuremusic.Play();
             MM.Chest3.enabled = true;
             MM.chest3collider.SetActive(false);
+            MM.Chest2Text.SetActive(true);
             Invoke("spawn", 2f);
+            Invoke("TextBox", 2f);
         }
+    }
+
+    void TextBox()
+    {
+        MM.Chest1text.SetActive(false);
+        MM.Chest2Text.SetActive(false);
+        MM.Chest2Text.SetActive(false);
     }
 }
             

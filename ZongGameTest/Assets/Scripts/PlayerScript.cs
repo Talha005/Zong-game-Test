@@ -22,16 +22,17 @@ public class PlayerScript : MonoBehaviour
     }
      void spawn()
     {
-        Instantiate(MM.player, MM.spawnPos.transform.position, MM.spawnPos.transform.rotation);
-        MM.player.SetActive(false);
+        //Instantiate(MM.player, MM.spawnPos.transform.position, MM.spawnPos.transform.rotation);      
+        MM.player.transform.position = MM.spawnPos.position;
         PlayerPrefs.SetInt("Diamond", 0);
         PlayerCam.Cam.SetActive(false);
         MM.restartbtn.SetActive(false);
         MM.menubtn.SetActive(false);
-        MM.CameraMain.SetActive(true);
+        
         MM.menuPanel.SetActive(true);
         MM.Alert.Play();
         MM.objCollider.SetActive(true);
+        PlayerPrefs.SetInt("spawn", 1);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -95,6 +96,9 @@ public class PlayerScript : MonoBehaviour
             MM.Chest1text.SetActive(false);
             MM.Chest2Text.SetActive(false);
             MM.Chext3Text.SetActive(true);
+            MM.player.SetActive(false);
+            MM.CameraMain.SetActive(true);
+            MM.player.SetActive(false);
             Invoke("spawn", 2f);
             Invoke("TextBox", 1f);
         }

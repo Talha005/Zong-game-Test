@@ -8,7 +8,8 @@ public class MenuManager : MonoBehaviour
 
     public AudioSource BGmusic, iconmusic, selectmusic, treasuremusic, Alert;
     public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel, restartbtn, menubtn;
-    public GameObject player, spawnPos, CameraMain, gemMain;
+    public GameObject player, CameraMain, gemMain;
+    public Transform spawnPos;
     private Crouch PlayerCam;
     private PlayerScript PS;
     public GameObject objCollider, Chest1collider, Chest2collider,  chest3collider;
@@ -23,6 +24,7 @@ public class MenuManager : MonoBehaviour
         BGmusic.Play();
         PlayerPrefs.SetInt("Diamond", 0);
         //Instantiate(player, spawnPos.transform.position, spawnPos.transform.rotation);
+        
     }
 
     // Update is called once per frame
@@ -65,22 +67,19 @@ public class MenuManager : MonoBehaviour
     }
     public void Exit()
     {
-        PlayerCam.Cam.SetActive(true);
-        CameraMain.SetActive(false);
-        player.SetActive(true);
-        menuPanel.SetActive(false);
-        restartbtn.SetActive(true);
-        menubtn.SetActive(true);
-        PS.Handback.SetActive(false);
-        PS.Handhold1.SetActive(true);
-        objCollider.SetActive(false);
-        if (PlayerPrefs.GetInt("Diamond") == 0)
-        {
-            Instantiate(player, spawnPos.transform.position, spawnPos.transform.rotation);
-        }
-        else if (PlayerPrefs.GetInt("Diamond") == 1)
-        {
-            //objCollider.SetActive(false);
-        }
+        //if (PlayerPrefs.GetInt("spawn") == 0)
+        //{
+            PlayerCam.Cam.SetActive(true);
+            CameraMain.SetActive(false);
+            player.SetActive(true);
+            menuPanel.SetActive(false);
+            restartbtn.SetActive(true);
+            menubtn.SetActive(true);
+            PS.Handback.SetActive(false);
+            PS.Handhold1.SetActive(true);
+            objCollider.SetActive(false);
+       // }
+        
+        
     }
 }

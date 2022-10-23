@@ -7,7 +7,7 @@ public class MenuManager : MonoBehaviour
 {
 
     public AudioSource BGmusic, iconmusic, selectmusic, treasuremusic, Alert;
-    public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel;
+    public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel, restartbtn, menubtn;
     public GameObject player, spawnPos, CameraMain, gemMain;
     private Crouch PlayerCam;
     public GameObject objCollider, Chest1collider, Chest2collider, chest3collider;

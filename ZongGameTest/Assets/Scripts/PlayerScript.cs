@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     private Crouch PlayerCam;
     private MenuManager MM;
-    public GameObject Handback,Handhold1, handdiamondchest, gem1, gem2, Diamond3;
+    public GameObject Handback,Handhold1, gem1, gem2, Diamond3;
     public Animator Handgetdiamond, Box1diamond, Box2Diamond;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,8 @@ public class PlayerScript : MonoBehaviour
         MM.player.SetActive(false);
         PlayerPrefs.SetInt("Diamond", 0);
         PlayerCam.Cam.SetActive(false);
+        MM.restartbtn.SetActive(false);
+        MM.menubtn.SetActive(false);
         MM.CameraMain.SetActive(true);
         MM.menuPanel.SetActive(true);
         MM.Alert.Play();
@@ -60,7 +62,8 @@ public class PlayerScript : MonoBehaviour
                 MM.particle1.SetActive(true);
                 MM.Chest1collider.SetActive(false);
                 MM.Chest1text.SetActive(true);
-                MM.chest1diamond.SetActive(true);
+                MM.Chest2Text.SetActive(false);
+                MM.Chext3Text.SetActive(false);               
                 gem1.SetActive(true);
                 Box1diamond.enabled = true;
                 Invoke("TextBox", 1f);
@@ -74,9 +77,10 @@ public class PlayerScript : MonoBehaviour
                 MM.treasuremusic.Play();
                 MM.Chest2.enabled = true;
                 MM.particle2.SetActive(true);
-                MM.Chest2collider.SetActive(false);
-                MM.chest2diamond.SetActive(true);
+                MM.Chest2collider.SetActive(false);                
+                MM.Chest1text.SetActive(false);
                 MM.Chest2Text.SetActive(true);
+                MM.Chext3Text.SetActive(false);
                 gem2.SetActive(true);
                 Box2Diamond.enabled = true;
               
@@ -88,7 +92,9 @@ public class PlayerScript : MonoBehaviour
             MM.treasuremusic.Play();
             MM.Chest3.enabled = true;
             MM.chest3collider.SetActive(false);
-            MM.Chest2Text.SetActive(true);
+            MM.Chest1text.SetActive(false);
+            MM.Chest2Text.SetActive(false);
+            MM.Chext3Text.SetActive(true);
             Invoke("spawn", 2f);
             Invoke("TextBox", 1f);
         }
@@ -98,7 +104,9 @@ public class PlayerScript : MonoBehaviour
     {
         MM.Chest1text.SetActive(false);
         MM.Chest2Text.SetActive(false);
-        MM.Chest2Text.SetActive(false);
+        MM.Chext3Text.SetActive(false);
+        gem1.SetActive(false);
+        gem2.SetActive(false);
     }
     void gethand()
     {

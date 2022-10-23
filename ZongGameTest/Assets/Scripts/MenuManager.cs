@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     public GameObject player, spawnPos, CameraMain, gemMain;
     private Crouch PlayerCam;
     private PlayerScript PS;
-    public GameObject objCollider, Chest1collider, chest1diamond, Chest2collider, chest2diamond, chest3collider;
+    public GameObject objCollider, Chest1collider, Chest2collider,  chest3collider;
     public Animator Chest1, Chest2, Chest3, diamond1, diamond2;
     public GameObject particle1, particle2, Diamondimg;
     public GameObject Chest1text, Chest2Text, Chext3Text;

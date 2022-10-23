@@ -1026,7 +1026,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &179838650
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1047,7 +1047,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179838649}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4749,7 +4749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &681503330
 Transform:
   m_ObjectHideFlags: 0
@@ -4784,7 +4784,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681503329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -5981,7 +5981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &952959211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6002,7 +6002,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952959210}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6052,7 +6052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952959210}
   m_LocalRotation: {x: -0, y: 0.095405184, z: -0, w: 0.9954385}
-  m_LocalPosition: {x: -9.15, y: -3.0421906, z: -21.84}
+  m_LocalPosition: {x: -9.47, y: -3.0421906, z: -24.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 215757751}
@@ -12007,9 +12007,7 @@ MonoBehaviour:
   gemMain: {fileID: 544463689}
   objCollider: {fileID: 681503329}
   Chest1collider: {fileID: 952959210}
-  chest1diamond: {fileID: 0}
   Chest2collider: {fileID: 2103143358}
-  chest2diamond: {fileID: 0}
   chest3collider: {fileID: 179838649}
   Chest1: {fileID: 7050648801808132020}
   Chest2: {fileID: 1702728300}
@@ -14727,7 +14725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &2103143359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14748,7 +14746,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103143358}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -14798,7 +14796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103143358}
   m_LocalRotation: {x: -0, y: 0.28206417, z: -0, w: 0.9593955}
-  m_LocalPosition: {x: -11.795, y: -2.6412354, z: -22.822}
+  m_LocalPosition: {x: -12.31, y: -2.6412354, z: -23.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 215757751}

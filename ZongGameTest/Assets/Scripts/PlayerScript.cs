@@ -6,6 +6,8 @@ public class PlayerScript : MonoBehaviour
 {
     private Crouch PlayerCam;
     private MenuManager MM;
+    public GameObject Handback,Handhold1, handdiamondchest, gem1, gem2, Diamond3;
+    public Animator Handgetdiamond, Box1diamond, Box2Diamond;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,32 +35,53 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == "pickobject")
         {
+            Handgetdiamond.enabled = true;   
+            Invoke("gethand", 2f);
+           
+        }
+        if (other.gameObject.tag == "object")
+        {
             MM.player.SetActive(false);
+            MM.restartbtn.SetActive(false);
+            MM.menubtn.SetActive(false);
             PlayerPrefs.SetInt("Diamond", 1);
             PlayerCam.Cam.SetActive(false);
             MM.CameraMain.SetActive(true);
             MM.menuPanel.SetActive(true);
-            MM.Alert.Play();            
+            MM.Alert.Play();
         }
-        if(other.gameObject.tag == "Box1")
+        if (other.gameObject.tag == "Box1")
         {
-            MM.treasuremusic.Play();
-            MM.Chest1.enabled = true;
-            MM.particle1.SetActive(true);
-            MM.Chest1collider.SetActive(false);
-            MM.Chest1text.SetActive(true);
-            MM.diamond1.enabled = true;
-            Invoke("TextBox", 2f);
+            if (PlayerPrefs.GetInt("Diamond") == 1)
+            {
+                Diamond3.SetActive(false);
+                MM.treasuremusic.Play();
+                MM.Chest1.enabled = true;
+                MM.particle1.SetActive(true);
+                MM.Chest1collider.SetActive(false);
+                MM.Chest1text.SetActive(true);
+                MM.chest1diamond.SetActive(true);
+                gem1.SetActive(true);
+                Box1diamond.enabled = true;
+                Invoke("TextBox", 1f);
+            }
         }
         if (other.gameObject.tag == "Box2")
         {
-            MM.treasuremusic.Play();
-            MM.Chest2.enabled = true;
-            MM.particle2.SetActive(true);
-            MM.Chest2collider.SetActive(false);
-            MM.Chest2Text.SetActive(true);
-            MM.diamond2.enabled = true;
-            Invoke("TextBox", 2f);
+            if (PlayerPrefs.GetInt("Diamond") == 1)
+            {
+                Diamond3.SetActive(false);
+                MM.treasuremusic.Play();
+                MM.Chest2.enabled = true;
+                MM.particle2.SetActive(true);
+                MM.Chest2collider.SetActive(false);
+                MM.chest2diamond.SetActive(true);
+                MM.Chest2Text.SetActive(true);
+                gem2.SetActive(true);
+                Box2Diamond.enabled = true;
+              
+                Invoke("TextBox", 1f);
+            }
         }
         if (other.gameObject.tag == "Box3")
         {
@@ -67,7 +90,7 @@ public class PlayerScript : MonoBehaviour
             MM.chest3collider.SetActive(false);
             MM.Chest2Text.SetActive(true);
             Invoke("spawn", 2f);
-            Invoke("TextBox", 2f);
+            Invoke("TextBox", 1f);
         }
     }
 
@@ -76,6 +99,22 @@ public class PlayerScript : MonoBehaviour
         MM.Chest1text.SetActive(false);
         MM.Chest2Text.SetActive(false);
         MM.Chest2Text.SetActive(false);
+    }
+    void gethand()
+    {
+        MM.gemMain.SetActive(false);
+       
+    }
+    void UIbox()
+    {
+        MM.player.SetActive(false);
+        MM.restartbtn.SetActive(false);
+        MM.menubtn.SetActive(false);
+        PlayerPrefs.SetInt("Diamond", 1);
+        PlayerCam.Cam.SetActive(false);
+        MM.CameraMain.SetActive(true);
+        MM.menuPanel.SetActive(true);
+        MM.Alert.Play();
     }
 }
             

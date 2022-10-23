@@ -10,7 +10,8 @@ public class MenuManager : MonoBehaviour
     public GameObject menuPanel, weaponpanel, pointspanel, instrumentspanel, restartbtn, menubtn;
     public GameObject player, spawnPos, CameraMain, gemMain;
     private Crouch PlayerCam;
-    public GameObject objCollider, Chest1collider, Chest2collider, chest3collider;
+    private PlayerScript PS;
+    public GameObject objCollider, Chest1collider, chest1diamond, Chest2collider, chest2diamond, chest3collider;
     public Animator Chest1, Chest2, Chest3, diamond1, diamond2;
     public GameObject particle1, particle2, Diamondimg;
     public GameObject Chest1text, Chest2Text, Chext3Text;
@@ -18,8 +19,10 @@ public class MenuManager : MonoBehaviour
     void Start()
     {
         PlayerCam = FindObjectOfType<Crouch>();
+        PS = FindObjectOfType<PlayerScript>();
         BGmusic.Play();
         PlayerPrefs.SetInt("Diamond", 0);
+        //Instantiate(player, spawnPos.transform.position, spawnPos.transform.rotation);
     }
 
     // Update is called once per frame
@@ -37,19 +40,10 @@ public class MenuManager : MonoBehaviour
         if(PlayerPrefs.GetInt("Diamond") == 1)
         {
             Diamondimg.SetActive(true);
-            gemMain.SetActive(false);
+           
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "pickobject")
-        {
-            PlayerPrefs.SetInt("Diamond", 1);
-            PlayerCam.Cam.SetActive(false);
-            CameraMain.SetActive(true);
-        }     
-    }
      public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -75,13 +69,18 @@ public class MenuManager : MonoBehaviour
         CameraMain.SetActive(false);
         player.SetActive(true);
         menuPanel.SetActive(false);
+        restartbtn.SetActive(true);
+        menubtn.SetActive(true);
+        PS.Handback.SetActive(false);
+        PS.Handhold1.SetActive(true);
+        objCollider.SetActive(false);
         if (PlayerPrefs.GetInt("Diamond") == 0)
         {
             Instantiate(player, spawnPos.transform.position, spawnPos.transform.rotation);
         }
         else if (PlayerPrefs.GetInt("Diamond") == 1)
         {
-         objCollider.SetActive(false);
+            //objCollider.SetActive(false);
         }
     }
 }
